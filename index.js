@@ -22,8 +22,4 @@ app.use('/students', studentsRouter)
 app.use('/instructors', instructorsRouter)
 app.use('/enrollments', enrollmentsRouter)
 
-app.listen(port, () => {
-    console.log(`Started listening to port ${port}`)
-})
-
 module.exports = app
