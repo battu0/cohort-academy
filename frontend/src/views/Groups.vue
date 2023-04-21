@@ -1,9 +1,9 @@
 <script>
-import { mapActions, mapState } from "pinia";
+import { mapActions } from "pinia";
 import { useCounterStore } from "../stores/counter";
 
 export default {
-	name: "Groups",
+	name: "GroupsView",
 	data() {
 		return {
 			isLoading: true,

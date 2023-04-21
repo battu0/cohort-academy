@@ -1,5 +1,4 @@
 <script>
-import { mapActions } from "pinia";
 import { useCounterStore } from "../stores/counter";
 
 export default {
@@ -15,7 +14,6 @@ export default {
 		console.log("Mounted");
 		// this.group = await this.fetchGroup(this.$route.params.groupId);
 		// this.isLoading = false;
-		const store = useCounterStore();
 		const groupId = this.$route.params.groupId;
 		console.log("groupId:", groupId);
 		this.group = await this.fetchGroup(groupId);
