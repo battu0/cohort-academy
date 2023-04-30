@@ -1,7 +1,6 @@
-const BaseService = require('./base-service');
-const Student = require('../models/student');
+const BaseService = require("./base-service")
+const Student = require("../models/student")
 
-class StudentService extends BaseService {
-};
+class StudentService extends BaseService {}
 
-module.exports = new StudentService(Student);
+module.exports = new StudentService(Student)

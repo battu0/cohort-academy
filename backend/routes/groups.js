@@ -1,49 +1,49 @@
-const groupService = require("../service/group-service");
-const enrollmentService = require("../service/enrollment-service");
+const groupService = require("../service/group-service")
+const enrollmentService = require("../service/enrollment-service")
 
-const router = require("express").Router();
+const router = require("express").Router()
 
 router.get("/", async (req, res) => {
-	const groups = await groupService.load();
-	res.render("groups", { groups });
-});
+  const groups = await groupService.load()
+  res.render("groups", { groups })
+})
 
 router.post("/", async (req, res, next) => {
-	try {
-		const group = await groupService.insert(req.body);
-		res.send(group);
-	} catch (e) {
-		next(e);
-	}
-});
+  try {
+    const group = await groupService.insert(req.body)
+    res.send(group)
+  } catch (e) {
+    next(e)
+  }
+})
 
 router.get("/:groupId", async (req, res) => {
-	const group = await groupService.find(req.params.groupId);
-	if (!group) return res.status(404).send("Cannot find group");
-	res.send(group);
-	// res.render("group", { group });
-});
+  const group = await groupService.find(req.params.groupId)
+  if (!group) return res.status(404).send("Cannot find group")
+  res.send(group)
+  // res.render("group", { group });
+})
 
 router.delete("/:groupId", async (req, res) => {
-	await groupService.removeBy("_id", req.params.groupId);
-	res.send("OK");
-});
+  await groupService.removeBy("_id", req.params.groupId)
+  res.send("OK")
+})
 
 router.post("/:groupId/courses", async (req, res) => {
-	const { courseId, enrollmentDate } = req.body;
-	const { groupId } = req.params;
-	const enrollment = await enrollmentService.enroll(
-		groupId,
-		courseId,
-		enrollmentDate
-	);
-	res.send(enrollment);
-});
+  const { courseId, enrollmentDate } = req.body
+  const { groupId } = req.params
+  const enrollment = await enrollmentService.enroll(
+    groupId,
+    courseId,
+    enrollmentDate
+  )
+  res.send(enrollment)
+})
 
 router.patch("/:groupId", async (req, res) => {
-	const { groupId } = req.params;
-	const { name } = req.body;
-	await groupService.update(groupId, { name });
-});
+  const { groupId } = req.params
+  const { name } = req.body
+  await groupService.update(groupId, { name })
+})
 
-module.exports = router;
+module.exports = router
