@@ -4,9 +4,4 @@ import UserPost from "../components/UserPost.vue"
 
 <template></template>
 
-<style scoped>
-.posts-container {
-  display: flex;
-  flex-direction: column-reverse;
-}
-</style>
+<style scoped></style>
