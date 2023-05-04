@@ -106,6 +106,8 @@ body {
 ol,
 ul {
   list-style: none;
+  overflow: hidden;
+  background-color: #333;
 }
 blockquote,
 q {

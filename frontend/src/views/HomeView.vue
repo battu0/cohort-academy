@@ -1,7 +1,9 @@
 <script setup>
-import UserPost from "../components/UserPost.vue"
+import NavBar from "../components/NavBar.vue"
 </script>
 
-<template></template>
+<template>
+  <NavBar />
+</template>
 
 <style scoped></style>
