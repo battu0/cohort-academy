@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 <template>
   <NavBar />
-  <UserPost />
+  <UserPost v-for="post in posts" :key="post._id" :post="post" />
 </template>
 
 <style scoped></style>

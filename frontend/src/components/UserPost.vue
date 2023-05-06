@@ -7,10 +7,10 @@ defineProps({
 })
 </script>
 <template>
-  <div class="post">
+  <div class="posts">
     <div class="post">
       <div class="post__header">
-        <div class="post__author-logo">{{ post.avatar }}</div>
+        <!-- <div class="post__author-logo">{{ post.avatar }}</div> -->
         <div class="post__author-name">{{ post.name }}</div>
         <div class="post__author-slug">{{ post.username }}</div>
         <div class="post__publish-time">{{ post.publish_time }}</div>
